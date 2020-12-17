@@ -13,10 +13,16 @@ import Button from '../../components/Button';
 
 import { Container, Content, Background } from './styles';
 
+interface SignUpFormData {
+  email: string;
+  name: string;
+  password: string;
+}
+
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async (data: object) => {
+  const handleSubmit = useCallback(async (data: SignUpFormData) => {
     try {
       formRef.current?.setErrors({});
 
